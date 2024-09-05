@@ -1,9 +1,53 @@
+:root {
+  /* Primary: Guide Pink */
+  --primary-100: #fff2f2;
+  --primary-200: #ffcaca;
+  --primary-300: #fca0a5;
+  --primary-400: #f57583;
+  --primary-500: #e84a65;
+  --primary-600: #b82646;
+  --primary-700: #871434;
+  --primary-800: #570b25;
+  --primary-900: #260512;
+
+  /* Accent: Water Blue */
+  --accent-100: #f2f8ff;
+  --accent-200: #b8dbfe;
+  --accent-300: #7cc0f8;
+  --accent-400: #40a6e7;
+  --accent-500: #0a88c7;
+  --accent-600: #03749f;
+  --accent-700: #015d77;
+  --accent-800: #00424e;
+  --accent-900: #002226;
+
+  /* Neutral */
+  --neutral-100: #fcfafa;
+  --neutral-200: #eae4e4;
+  --neutral-300: #d7cecf;
+  --neutral-400: #c5b9ba;
+  --neutral-500: #b3a4a7;
+  --neutral-600: #8f8386;
+  --neutral-700: #6c6366;
+  --neutral-800: #494245;
+  --neutral-900: #262224;
+}
 h2 p {
   font-family: Montserrat;
 }
 
+.badge {
+  background-color: var(--primary-300);
+  color: var(--neutral-900);
+}
+
+.btn-dark {
+  background-color: var(--neutral-800);
+  color: var(--accent-100);
+}
+
 body {
-  background-color: white;
+  background-color: var(--neutral-100);
 }
 
 #hero {
@@ -28,7 +72,7 @@ body {
 
 /* loader */
 .loader-container {
-  background-color: white;
+  background-color: var(--neutral-100);
   position: fixed;
   display: flex;
   align-items: center;
@@ -47,7 +91,7 @@ body {
 .loader div {
   width: 16px;
   height: 16px;
-  background-color: black;
+  background-color: var(--neutral-900);
   border-radius: 50%;
   animation: grow-shrink 0.9s infinite;
 }
@@ -83,23 +127,18 @@ body {
 .navbar-toggler {
   border: none;
   font-size: 1;
-  color: black;
+  color: var(--neutral-900);
 }
 .navbar {
   transition: background-color 0.3s ease;
 }
 .navbar.transparent {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: var(--neutral-100);
 }
 .navbar.scrolled {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.75
-  ); /* Warna putih dengan transparansi */
+  background-color: var(--neutral-100);
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px var(--neutral-600);
 }
 
 .navbar-toggler:focus,
@@ -109,14 +148,14 @@ body {
 }
 
 .nav-link {
-  color: #666777;
+  color: var(--primary-900);
   font-weight: 500;
   position: relative;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: black;
+  color: var(--neutral-900);
 }
 
 @media (min-width: 991px) {
@@ -128,7 +167,7 @@ body {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: black;
+    background-color: var(--neutral-900);
     visibility: hidden;
     transition: all 0.3s ease-in-out;
   }
@@ -151,7 +190,7 @@ body {
 .hero-nama {
   font-size: 3rem;
   font-weight: 700;
-  color: #333;
+  color: var(--primary-900);
   margin-bottom: 1rem;
 }
 .hero-job {
@@ -159,8 +198,8 @@ body {
   margin-bottom: 2rem;
 }
 .hero-portofolio:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--neutral-700);
+  color: var(--accent-100);
 }
 .foto {
   position: relative;
@@ -191,11 +230,11 @@ body {
 .sertifikat {
   margin-top: 90px;
   height: 20vh;
-  background-color: black;
+  background-color: var(--neutral-900);
 }
 .about-title {
   font-size: clamp(2rem, 5vw, 2.5rem);
-  color: #333;
+  color: var(--neutral-900);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 3rem;
@@ -207,7 +246,7 @@ body {
   display: block;
   width: 50px;
   height: 3px;
-  background-color: black;
+  background-color: var(--neutral-900);
   margin: 10px auto 0;
 }
 
@@ -238,7 +277,7 @@ body {
 /* projek */
 .projects-title {
   font-size: clamp(2rem, 5vw, 2.5rem);
-  color: #333;
+  color: var(--neutral-900);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 3rem;
@@ -250,7 +289,7 @@ body {
   display: block;
   width: 50px;
   height: 3px;
-  background-color: black;
+  background-color: var(--neutral-900);
   margin: 10px auto 0;
 }
 
@@ -278,12 +317,17 @@ body {
 
 /* skills */
 #skills {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(
+    180deg,
+    var(--neutral-100) 0%,
+    var(--neutral-200) 100%
+  );
+  border-radius: 20px;
 }
 
 .skills-title {
   font-size: clamp(2rem, 5vw, 2.5rem);
-  color: #333;
+  color: var(--neutral-900);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 3rem;
@@ -295,12 +339,12 @@ body {
   display: block;
   width: 50px;
   height: 3px;
-  background-color: black;
+  background-color: var(--neutral-900);
   margin: 10px auto 0;
 }
 
 .skill-card {
-  background-color: white;
+  background-color: var(--neutral-100);
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -370,7 +414,7 @@ body {
 /* contact */
 .contact-title {
   font-size: clamp(2rem, 5vw, 2.5rem);
-  color: #333;
+  color: var(--neutral-900);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 3rem;
@@ -382,7 +426,7 @@ body {
   display: block;
   width: 50px;
   height: 3px;
-  background-color: black;
+  background-color: var(--neutral-900);
   margin: 10px auto 0;
 }
 
