@@ -37,7 +37,7 @@ h2 p {
 }
 
 .badge {
-  background-color: var(--primary-300);
+  background-color: var(--primary-200);
   color: var(--neutral-900);
 }
 
@@ -322,7 +322,6 @@ body {
     var(--neutral-100) 0%,
     var(--neutral-200) 100%
   );
-  border-radius: 20px;
 }
 
 .skills-title {
