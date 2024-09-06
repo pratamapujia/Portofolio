@@ -207,7 +207,7 @@ body {
 
 .blob {
   position: absolute;
-  top: 60%;
+  top: 54%;
   left: 50%;
   width: 100%;
   height: 100%;
@@ -253,8 +253,8 @@ body {
 /* btn-preview */
 
 #btn-preview:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--neutral-800);
+  color: var(--accent-100);
 }
 
 /* projek card */
