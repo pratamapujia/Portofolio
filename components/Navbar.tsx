@@ -61,6 +61,7 @@ export default function Navbar() {
           PPA
         </span>
 
+<<<<<<< HEAD
         {/* Menu Desktop */}
         <div className="hidden sm:flex items-center gap-1 sm:gap-1.5">
           {NAV_ITEMS.map((item) => (
@@ -93,6 +94,15 @@ export default function Navbar() {
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
+=======
+        {NAV_ITEMS.map((item) => (
+          <button
+            key={item.id}
+            onClick={() => handleClick(item.id)}
+            className={`relative rounded-full px-2.5 sm:px-4 py-1.5 text-[11px] sm:text-sm font-medium transition-colors duration-300 whitespace-nowrap ${
+              active === item.id ? "text-ink" : "text-ivory/70 hover:text-ivory"
+            }`}
+>>>>>>> 4ff3388 (Refactor Navbar component for improved readability and formatting)
           >
             {isOpen ? (
               <path
