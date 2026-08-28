@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a0c10;
+  color: #f4f2ed;
+  font-feature-settings: "ss01" on, "ss02" on;
+}
+
+::selection {
+  background: rgba(212, 165, 116, 0.35);
+  color: #fff;
+}
+
+/* thin, quiet scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0c10;
+}
+::-webkit-scrollbar-thumb {
+  background: #22262f;
+  border-radius: 999px;
+  border: 2px solid #0a0c10;
+}
+
+/* visible keyboard focus, respected everywhere */
+:focus-visible {
+  outline: 2px solid #d4a574;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/[0.08];
+  }
+
+  .glass-strong {
+    @apply bg-white/[0.06] backdrop-blur-2xl border border-white/[0.1];
+  }
+
+  .noise-bg {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.045) 1px, transparent 0);
+    background-size: 26px 26px;
+  }
+
+  .section-eyebrow {
+    @apply font-mono text-xs tracking-[0.25em] uppercase text-gold/80;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
