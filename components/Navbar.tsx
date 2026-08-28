@@ -13,7 +13,7 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false); // State untuk menu mobile
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -44,18 +44,18 @@ export default function Navbar() {
 
   const handleClick = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false); // Tutup menu mobile setelah link diklik
+    setIsOpen(false);
   };
 
   return (
-    <header className="fixed top-4 sm:top-6 left-0 right-0 mx-auto z-50 w-[92%] sm:w-fit">
+    <header className="fixed top-4 sm:top-6 inset-x-0 mx-auto z-50 w-[92%] sm:w-fit max-w-full px-2 sm:px-0">
       {/* Container utama Navbar */}
       <nav
-        className={`glass-strong flex items-center justify-between sm:justify-center gap-1 sm:gap-1.5 rounded-full px-4 sm:px-2.5 py-2 shadow-glass transition-shadow duration-500 ${
+        className={`glass-strong flex items-center justify-between sm:justify-center gap-1 sm:gap-1.5 rounded-full px-4 sm:px-2.5 py-2 shadow-glass transition-shadow duration-500 w-full ${
           scrolled ? "shadow-glass-lg" : ""
         }`}
       >
-        {/* Logo / Singkatan - sekarang selalu tampil di mobile sebagai header menu */}
+        {/* Logo / Singkatan */}
         <span className="flex items-center gap-2 font-mono text-xs text-gold/90 sm:border-r sm:border-white/10 sm:pr-4 sm:mr-1">
           <span className="h-1.5 w-1.5 rounded-full bg-teal animate-blink" />
           PPA
@@ -113,15 +113,15 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Dropdown Menu Mobile */}
+      {/* Dropdown Menu Mobile - Diubah posisinya agar tetap terikat dalam boundary container */}
       <div
-        className={`absolute top-full left-0 w-full mt-2 transition-all duration-300 sm:hidden origin-top ${
+        className={`absolute top-full left-0 right-0 mt-2 transition-all duration-300 sm:hidden origin-top ${
           isOpen
             ? "opacity-100 scale-y-100"
             : "opacity-0 scale-y-0 pointer-events-none"
         }`}
       >
-        <div className="glass-strong flex flex-col gap-1 rounded-2xl p-2 shadow-glass-lg">
+        <div className="glass-strong flex flex-col gap-1 rounded-2xl p-2 shadow-glass-lg w-full">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.id}
