@@ -48,7 +48,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] sm:w-auto">
+    <header className="fixed top-4 sm:top-6 left-0 right-0 mx-auto z-50 w-[92%] sm:w-fit">
       {/* Container utama Navbar */}
       <nav
         className={`glass-strong flex items-center justify-between sm:justify-center gap-1 sm:gap-1.5 rounded-full px-4 sm:px-2.5 py-2 shadow-glass transition-shadow duration-500 ${
