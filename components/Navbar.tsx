@@ -22,9 +22,9 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = NAV_ITEMS.map((item) => document.getElementById(item.id)).filter(
-      (el): el is HTMLElement => !!el
-    );
+    const sections = NAV_ITEMS.map((item) =>
+      document.getElementById(item.id),
+    ).filter((el): el is HTMLElement => !!el);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -34,7 +34,7 @@ export default function Navbar() {
           }
         });
       },
-      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -62,9 +62,7 @@ export default function Navbar() {
             key={item.id}
             onClick={() => handleClick(item.id)}
             className={`relative rounded-full px-2.5 sm:px-4 py-1.5 text-[11px] sm:text-sm font-medium transition-colors duration-300 whitespace-nowrap ${
-              active === item.id
-                ? "text-ink"
-                : "text-ivory/70 hover:text-ivory"
+              active === item.id ? "text-ink" : "text-ivory/70 hover:text-ivory"
             }`}
           >
             {active === item.id && (
